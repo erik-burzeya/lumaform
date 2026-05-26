@@ -183,7 +183,7 @@ export default function App() {
             onClick={handleDownloadSvg}
             className="px-5 py-2.5 border border-[#4A443F] text-xs uppercase tracking-widest hover:bg-[#4A443F] hover:text-[#F4F0EA] transition-all flex items-center gap-2 font-mono font-medium cursor-pointer"
           >
-            <Download className="w-3.5 h-3.5" />
+            <Download className="w-19 h-10 border border-[#D8D2C8] flex items-center justify-center" />
             <span>Export .SVG</span>
           </button>
         </div>
@@ -214,7 +214,7 @@ export default function App() {
             {/* Sidebar Controls matching Aesthetic Natural Tones Form */}
             <aside id="generator-sidebar" 
             className="sidebar w-full md:w-96 border-b md:border-b-0 md:border-r border-[#DED9D1] p-6 md:p-8 flex flex-col justify-between max-h-none md:max-h-[calc(100vh-8rem)] overflow-y-auto bg-[#F4F0EA]">
-              <div className="space-y-8">
+              <div className="space-y-8 pt-6">
                 
                 {/* Introduction Header text */}
                 <div>
@@ -255,7 +255,7 @@ export default function App() {
                   </h3>
 
                   {/* Primary shape type radio buttons */}
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     <label className="text-[10px] uppercase tracking-widest opacity-60 font-mono">Geometrisches Muster</label>
                     <div className="grid grid-cols-2 gap-2">
                       {[
@@ -394,7 +394,7 @@ export default function App() {
                 </div>
 
                 {/* Background color options */}
-                <div className="space-y-2">
+                <div className="space-y-4">
                   <label className="text-[10px] uppercase tracking-widest opacity-60 font-mono block">
                     Hintergrund-Flimmern
                   </label>
@@ -420,20 +420,21 @@ export default function App() {
                   </div>
                   <div className="flex justify-between items-center text-[9px] font-mono tracking-wide">
                     <span className="opacity-50 uppercase">Canvas-Dimension</span>
-                    <span className="opacity-75">500 x 500 px</span>
+                    <span className="opacity-75">750 x 750 px</span>
                   </div>
                 </div>
               </div>
 
               {/* Action trigger Button matching exactly the specified 20px padding system */}
-              <div className="mt-8 pt-6 border-t border-[#DED9D1] space-y-2">
+              <div className="mt-8 pt-6 border-t border-[#DED9D1] space-y-4">
                 <button
                   onClick={() => triggerGeneration(false)}
                   disabled={isGenerating}
-                  className="w-full py-4.5 bg-[#8C927D] hover:bg-[#4A443F] disabled:bg-[#8C927D]/60 text-white text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-md flex items-center justify-center gap-2.5 cursor-pointer rounded-sm"
+                  
+                  className="w-80 h-20 py-4 bg-[#8C927D] hover:bg-[#4A443F] disabled:bg-[#8C927D]/60 text-white text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-md flex items-center justify-center gap-3 whitespace-nowrap cursor-pointer rounded-sm"
                 >
-                  <RefreshCw className={`w-3.5 h-3.5 ${isGenerating ? 'animate-spin' : ''}`} />
-                  <span>{isGenerating ? "Generiere..." : "Form neu generieren"}</span>
+                  <RefreshCw className="w-5 h-5 shrink-0" />
+                  <span>"text-center"{isGenerating ? "Generiere..." : "Form neu generieren"}</span>
                 </button>
               </div>
             </aside>
@@ -441,7 +442,7 @@ export default function App() {
             {/* Main Visual Art Canvas Center Container */}
             <section id="art-panel" className="flex-1 flex flex-col items-center justify-center p-6 md:p-12 lg:p-16 min-h-0 bg-[#EFECE6]/50">
               
-              <div className="w-full max-w-[500px] flex flex-col items-center gap-6">
+              <div className="w-full max-w-[720px] flex flex-col items-center gap-6">
                 
                 {/* SVG canvas enclosed with precise white frame border of 12px & shadow matching specifications */}
                 <div className="relative w-full aspect-square bg-white shadow-[0_30px_90px_-20px_rgba(74,68,63,0.15)] flex items-center justify-center border-[12px] border-white transition-all overflow-hidden rounded-xs group select-none">
@@ -478,23 +479,24 @@ export default function App() {
                 <div id="art-controls" className="w-full bg-[#F4F0EA] border border-[#DED9D1] p-3 rounded-sm flex align-middle justify-between gap-1 text-[11px] font-mono">
                   <button 
                     onClick={handleCopySvg}
-                    className="px-4 py-2 bg-[#EFECE6]/65 hover:bg-[#8C927D]/10 hover:text-[#4A443F] transition-all rounded-sm flex items-center gap-1.5 border border-transparent hover:border-[#DED9D1]"
+                    // "px-4" wurde durch "w-[160px] justify-center" ersetzt, damit der Button starr bleibt
+                    className="w-[160px] justify-center py-2 bg-[#EFECE6]/65 hover:bg-[#8C927D]/10 hover:text-[#4A443F] transition-all rounded-sm flex items-center gap-1.5 border border-transparent hover:border-[#DED9D1]"
                     title="SVG-Code kopieren"
                   >
                     {copied ? (
                       <>
-                        <Check className="w-3.5 h-3.5 text-[#8C927D] stroke-[2.5px]" />
+                        <Check className="w-4 h-4 text-[#8C927D] stroke-[2.5px]" />
                         <span className="font-semibold text-[#8C927D]">Kopiert!</span>
                       </>
                     ) : (
                       <>
-                        <Copy className="w-3.5 h-3.5 opacity-60" />
+                        <Copy className="w-4 h-4 opacity-60" />
                         <span>Code kopieren</span>
                       </>
                     )}
                   </button>
 
-                  <div className="flex items-center text-[10px] opacity-50 px-2 uppercase tracking-wide">
+                  <div className="px-4 py-2 flex items-center text-[10px] opacity-50 px-4 uppercase tracking-wide">
                     Instant-Vektor
                   </div>
                 </div>
@@ -659,7 +661,7 @@ export default function App() {
                   </p>
 
                   {/* Interactive Slider to see optical calculations */}
-                  <div className="space-y-2 pt-3">
+                  <div className="space-y-4 pt-3">
                     <div className="flex justify-between items-center text-xs font-mono">
                       <span>Proportionaler Formanteil:</span>
                       <span className="font-bold text-[#8C927D] bg-white px-2 py-0.5 border rounded-sm">{(harmonyRatio * 100).toFixed(0)}%</span>
