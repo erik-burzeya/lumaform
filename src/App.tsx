@@ -1,3 +1,4 @@
+import "./App.css";
 import React, { useState, useEffect } from "react";
 import { 
   Sparkles, 
@@ -143,6 +144,9 @@ export default function App() {
   };
 
   return (
+    <div className="app">
+
+    
     <div id="app-root" className="w-full min-h-screen bg-[#F4F0EA] text-[#4A443F] font-sans flex flex-col justify-between selection:bg-[#8C927D]/30">
       
       {/* Top Header Navigation matching Natural Tones style */}
@@ -208,7 +212,8 @@ export default function App() {
         {activeTab === "generator" && (
           <>
             {/* Sidebar Controls matching Aesthetic Natural Tones Form */}
-            <aside id="generator-sidebar" className="w-full md:w-96 border-b md:border-b-0 md:border-r border-[#DED9D1] p-6 md:p-8 flex flex-col justify-between max-h-none md:max-h-[calc(100vh-8rem)] overflow-y-auto bg-[#F4F0EA]">
+            <aside id="generator-sidebar" 
+            className="sidebar w-full md:w-96 border-b md:border-b-0 md:border-r border-[#DED9D1] p-6 md:p-8 flex flex-col justify-between max-h-none md:max-h-[calc(100vh-8rem)] overflow-y-auto bg-[#F4F0EA]">
               <div className="space-y-8">
                 
                 {/* Introduction Header text */}
@@ -805,4 +810,5 @@ export default function App() {
 
     </div>
   );
+  </div>)
 }
