@@ -1,48 +1,31 @@
-/* Google Fonts importieren */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;450;500;600&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* Global reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-/* Grundlegendes Body Styling */
+
+
 body {
-  min-height: 100vh;
-
-  /* Hauptschrift */
-  font-family: "Inter", sans-serif;
-
-  /* Heller minimalistischer Hintergrund */
+  font-family: var(--font-sans);
   background-color: #faf9f6;
-
-  /* Textfarbe */
   color: #1a1a1a;
-
-  /* Verhindert horizontales Scrollen */
   overflow-x: hidden;
 }
 
-/* Minimalistische Scrollbar */
+/* Custom minimal scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-/* Scrollbar Hintergrund */
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-/* Scrollbar Griff */
 ::-webkit-scrollbar-thumb {
   background: #e5e5e0;
   border-radius: 3px;
 }
 
-/* Hover Effekt */
 ::-webkit-scrollbar-thumb:hover {
-  background: #cccccc;
+  background: #ccc;
 }
+
