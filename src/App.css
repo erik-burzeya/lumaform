@@ -8,9 +8,9 @@
 /* SIDEBAR */
 
 .sidebar {
-  width: 340px;
+  width: 800;
 
-  background: #0b0b0b;
+  background: #F4F0EA;
 
   color: white;
 
@@ -98,9 +98,9 @@
 /* MAIN */
 
 .main-content {
-  flex: 1;
+  
 
-  background: #f5f2ec;
+  flex: 1;
 
   display: flex;
 
@@ -108,30 +108,29 @@
 
   justify-content: center;
 
+  background: #F4F0EA;
+
+  overflow: hidden;
+
   position: relative;
+
+  min-height: 100vh;
+
+
 }
 
 /* Canvas */
 
 .canvas-wrapper {
-  width: 650px;
+   width: 720px;
 
-  height: 650px;
-
-  background: white;
-
-  border-radius: 36px;
+  height: 720px;
 
   display: flex;
 
   align-items: center;
 
   justify-content: center;
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.08);
-
-  overflow: hidden;
 }
 
 /* SVG */
