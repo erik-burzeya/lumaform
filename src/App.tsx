@@ -1,18 +1,15 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
-import { 
-  Sparkles, 
-  Sliders, 
+import { useState, useEffect } from "react";import { 
+
+
   Download, 
   Copy, 
   RefreshCw, 
-  ChevronRight, 
+
   Check, 
-  Layers, 
-  HelpCircle, 
+
+
   Info,
-  Maximize2,
-  ExternalLink,
  
 } from "lucide-react";
 import type {
@@ -53,7 +50,7 @@ export default function App() {
   // Initialize and load default state
   useEffect(() => {
     // Trigger initial shape generation
-    triggerGeneration(true);
+    triggerGeneration();
   }, []);
 
   // Update SVG automatically when mathematical levers move or shape options change
@@ -81,8 +78,7 @@ export default function App() {
   };
 
   // Generate artwork function
-  const triggerGeneration = async (isInit = false) => {
-    rotateSeed();
+const triggerGeneration = async () => {    rotateSeed();
     setIsGenerating(true);
     setErrorMessage(null);
 
@@ -435,7 +431,7 @@ export default function App() {
               {/* Action trigger Button matching exactly the specified 20px padding system */}
               <div className="mt-8 pt-6 border-t border-[#DED9D1] space-y-4">
                 <button
-                  onClick={() => triggerGeneration(false)}
+                  onClick={() => triggerGeneration()}
                   disabled={isGenerating}
                   
                   className="w-full h-[74px] border border-[#D7D0C6] flex items-center justify-between

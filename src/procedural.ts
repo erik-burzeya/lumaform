@@ -13,7 +13,7 @@ export function generateProceduralSvg(
   // Center is 250, 250. Dimensions are 500x500
   const cx = 250;
   const cy = 250;
-  const size = 500;
+
   
   // Base bounding size for the shape (generally between 120 and 220 px radius)
   const baseRadius = 130 * scaleFactor;
@@ -113,7 +113,7 @@ export function generateProceduralSvg(
     const left = cx - topRadius;
     const right = cx + topRadius;
     const bottom = cy + archHeight / 2;
-    const innerBottom = bottom;
+
     
     // thickness as percentage of width
     const thickness = topRadius * (0.6 + (complexity - 0.5) * 0.45);
