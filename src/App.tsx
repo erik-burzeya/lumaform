@@ -216,7 +216,7 @@ const triggerGeneration = async () => {    rotateSeed();
           <>
             {/* Sidebar Controls matching Aesthetic Natural Tones Form */}
             <aside id="generator-sidebar" 
-            className="sidebar w-full md:w-96 border-b md:border-b-0 md:border-r border-[#DED9D1] p-6 md:p-8 flex flex-col justify-between max-h-none md:max-h-[calc(100vh-8rem)] overflow-y-auto bg-[#F4F0EA]">
+            className="sidebar w-full md:w-96 border-b md:border-b-0 md:border-r border-[#DED9D1] p-6 md:p-4 flex flex-col justify-between max-h-none md:max-h-[calc(100vh-8rem)] overflow-y-auto bg-[#F4F0EA]">
               <div className="space-y-8 pt-2">
                 
                 {/* Introduction Header text */}

@@ -1,6 +1,6 @@
 .app {
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
@@ -8,7 +8,7 @@
 /* SIDEBAR */
 
 .sidebar {
-  width: 500;
+  width: 800;
 
   background: #F4F0EA;
 
@@ -153,4 +153,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
