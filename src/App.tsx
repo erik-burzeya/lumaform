@@ -183,7 +183,7 @@ export default function App() {
             onClick={handleDownloadSvg}
             className="px-5 py-2.5 border border-[#4A443F] text-xs uppercase tracking-widest hover:bg-[#4A443F] hover:text-[#F4F0EA] transition-all flex items-center gap-2 font-mono font-medium cursor-pointer"
           >
-            <Download className="w-19 h-10 border border-[#D8D2C8] flex items-center justify-center" />
+            <Download className="w-4 h-8  border-[#D8D2C8] flex items-center justify-center" />
             <span>Export .SVG</span>
           </button>
         </div>
@@ -194,12 +194,19 @@ export default function App() {
         
         {/* MOBILE TABS (Responsive layout helper) */}
         <div className="flex md:hidden border-b border-[#DED9D1] bg-[#EFECE6] p-2 gap-1 overflow-x-auto">
-          <button 
-            onClick={() => setActiveTab("generator")}
-            className={`flex-1 text-center py-2 text-xs uppercase tracking-wider font-mono px-3 ${activeTab === "generator" ? "bg-[#8C927D] text-[#F4F0EA]" : "opacity-60"}`}
-          >
-            Generator
-          </button>
+          {/* Action Header Button */}
+            <div className="flex items-center gap-3">
+              
+              <button 
+                onClick={handleDownloadSvg}
+                className="px-3
+    py-2  text-[10px] uppercase tracking-widest hover:bg-[#4A443F] hover:text-[#F4F0EA] transition-all flex items-center gap-2 font-mono font-medium cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                <span>Export .SVG</span>
+              </button>
+
+            </div>
           <button 
             onClick={() => setActiveTab("about")}
             className={`flex-1 text-center py-2 text-xs uppercase tracking-wider font-mono px-3 ${activeTab === "about" ? "bg-[#8C927D] text-[#F4F0EA]" : "opacity-60"}`}
@@ -214,7 +221,7 @@ export default function App() {
             {/* Sidebar Controls matching Aesthetic Natural Tones Form */}
             <aside id="generator-sidebar" 
             className="sidebar w-full md:w-96 border-b md:border-b-0 md:border-r border-[#DED9D1] p-6 md:p-8 flex flex-col justify-between max-h-none md:max-h-[calc(100vh-8rem)] overflow-y-auto bg-[#F4F0EA]">
-              <div className="space-y-8 pt-6">
+              <div className="space-y-8 pt-2">
                 
                 {/* Introduction Header text */}
                 <div>
@@ -403,7 +410,7 @@ export default function App() {
                       <button
                         key={bg.hex}
                         onClick={() => setActiveBgColor(bg.hex)}
-                        className={`flex-1 py-1.5 px-3 border text-xs font-mono transition-all rounded-sm ${activeBgColor === bg.hex ? 'border-[#8C927D] bg-white font-semibold' : 'border-[#DED9D1] bg-transparent opacity-65 hover:opacity-100'}`}
+                        className={`flex-1 py-1.5 px-3 border text-xs font-mono transition-all rounded-sm ${activeBgColor === bg.hex ? 'border-[#8C927D] bg-[#ECE9E1] font-semibold' : 'border-[#DED9D1] bg-transparent opacity-65 hover:opacity-100'}`}
                       >
                         <span className="inline-block w-2.5 h-2.5 rounded-full mr-1.5 border align-middle" style={{ backgroundColor: bg.hex }}></span>
                         <span className="align-middle text-[10px]">{bg.name.split(" ")[1] || "Ecru"}</span>
@@ -431,10 +438,12 @@ export default function App() {
                   onClick={() => triggerGeneration(false)}
                   disabled={isGenerating}
                   
-                  className="w-80 h-20 py-4 bg-[#8C927D] hover:bg-[#4A443F] disabled:bg-[#8C927D]/60 text-white text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 shadow-md flex items-center justify-center gap-3 whitespace-nowrap cursor-pointer rounded-sm"
+                  className="w-full h-[74px] border border-[#D7D0C6] flex items-center justify-between
+    px-8 bg-[#8C927D] hover:bg-[#4A443F] disabled:bg-[#8C927D]/60 text-white text-xs uppercase 
+    font-medium transition-all duration-300 shadow-md flex items-center justify-center gap-3 whitespace-nowrap cursor-pointer rounded-sm transition-all"
                 >
                   <RefreshCw className="w-5 h-5 shrink-0" />
-                  <span>"text-center"{isGenerating ? "Generiere..." : "Form neu generieren"}</span>
+                  <span>{isGenerating ? "Generiere..." : "Form neu generieren"}</span>
                 </button>
               </div>
             </aside>
@@ -480,7 +489,7 @@ export default function App() {
                   <button 
                     onClick={handleCopySvg}
                     // "px-4" wurde durch "w-[160px] justify-center" ersetzt, damit der Button starr bleibt
-                    className="w-[160px] justify-center py-2 bg-[#EFECE6]/65 hover:bg-[#8C927D]/10 hover:text-[#4A443F] transition-all rounded-sm flex items-center gap-1.5 border border-transparent hover:border-[#DED9D1]"
+                    className="w-[160px] h-10 justify-center py-2 bg-[#EFECE6]/65 hover:bg-[#8C927D]/10 hover:text-[#4A443F] transition-all rounded-sm flex items-center gap-1.5 border border-transparent hover:border-[#DED9D1]"
                     title="SVG-Code kopieren"
                   >
                     {copied ? (
@@ -811,6 +820,6 @@ export default function App() {
       </footer>
 
     </div>
-  );
+  
   </div>)
 }
